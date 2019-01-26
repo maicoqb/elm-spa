@@ -4,17 +4,21 @@
   "description": "A Shy Elm SPA project.",
   "main": "elm.js",
   "watch": {
-    "build": {
+    "build-dev": {
       "patterns": ["src", "test"],
-      "extensions": "elm"
+      "extensions": "elm",
+      "delay": 2500,
+      "quiet": true
     }
   },
   "scripts": {
     "elm": "./node_modules/.bin/elm",
+    "format": "./node_modules/.bin/elm-format src --yes",
     "server": "./node_modules/superstatic/bin/server -c superstatic.json",
     "watch": "./node_modules/.bin/npm-watch",
 
     "dev": "npm run server -- public --port 8000 --host 127.0.0.1",
+    "build-dev": "npm rum elm -- make src/Main.elm --output public/elm.js",
     "build": "npm rum elm -- make src/Main.elm --output public/elm.js --optimize",
     "watch-dev": "npm run dev & npm run watch"
   },
