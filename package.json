@@ -1,0 +1,19 @@
+{
+  "name": "elm-spa",
+  "version": "0.1.0",
+  "description": "A Shy Elm SPA project.",
+  "main": "elm.js",
+  "scripts": {
+    "dev": "./node_modules/superstatic/bin/server public --port 8000 --host 127.0.0.1 -c superstatic.json"
+  },
+  "contributors": [
+    "Maico Borges <maicoqb@gmail.com> (https://maicoqb.github.io/)"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "elm": "^0.19.0-bugfix6",
+    "elm-format": "^0.8.1",
+    "superstatic": "^6.0.4",
+    "uglify-js": "^3.4.9"
+  }
+}
