@@ -3,8 +3,20 @@
   "version": "0.1.0",
   "description": "A Shy Elm SPA project.",
   "main": "elm.js",
+  "watch": {
+    "build": {
+      "patterns": ["src", "test"],
+      "extensions": "elm"
+    }
+  },
   "scripts": {
-    "dev": "./node_modules/superstatic/bin/server public --port 8000 --host 127.0.0.1 -c superstatic.json"
+    "elm": "./node_modules/.bin/elm",
+    "server": "./node_modules/superstatic/bin/server -c superstatic.json",
+    "watch": "./node_modules/.bin/npm-watch",
+
+    "dev": "npm run server -- public --port 8000 --host 127.0.0.1",
+    "build": "npm rum elm -- make src/Main.elm --output public/elm.js --optimize",
+    "watch-dev": "npm run dev & npm run watch"
   },
   "contributors": [
     "Maico Borges <maicoqb@gmail.com> (https://maicoqb.github.io/)"
@@ -13,6 +25,7 @@
   "devDependencies": {
     "elm": "^0.19.0-bugfix6",
     "elm-format": "^0.8.1",
+    "npm-watch": "^0.6.0",
     "superstatic": "^6.0.4",
     "uglify-js": "^3.4.9"
   }

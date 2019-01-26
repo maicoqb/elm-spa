@@ -1,1 +1,4 @@
 node_modules
+.notes
+src/elm.js
+elm-stuff
