@@ -12,6 +12,8 @@
     }
   },
   "scripts": {
+    "postinstall": "npm run build",
+    
     "elm": "./node_modules/.bin/elm",
     "format": "./node_modules/.bin/elm-format src --yes",
     "server": "./node_modules/superstatic/bin/server -c superstatic.json",
